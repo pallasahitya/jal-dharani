@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  # NOTE: Your PostgreSQL + PostGIS database is already running locally in container:
+  # Container: jal-dharani-db
+  # Database: jal_dharani
+  # User: jal_user
+  # Port: 5432
+  # This docker-compose focuses on LocalStack for local AWS S3 photo storage emulation.
+
+  localstack:
+    container_name: jal-dharani-localstack
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"            # LocalStack Gateway
+      - "4510-4559:4510-4559"  # External services port range
+    environment:
+      - SERVICES=s3
+      - AWS_DEFAULT_REGION=ap-south-1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "./localstack-init:/etc/localstack/init/ready.d"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    restart: unless-stopped

@@ -1,0 +1,8 @@
+{
+  "name": "Jal-Dharani: Community Heat & Water Resilience",
+  "description": "Empowering citizens and grassroots communities across India to understand surface water, aquifers, and extreme heat, collaborate locally, organize real-world conservation, document impact, and foster climate resilience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

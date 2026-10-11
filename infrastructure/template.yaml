@@ -1,0 +1,69 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Jal-Dharani Serverless Application
+  Community-Driven Heat and Water Resilience Platform for India.
+  Local development compatible with AWS SAM CLI and LocalStack.
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 512
+    Runtime: python3.10
+    Environment:
+      Variables:
+        DATABASE_URL: !Ref DatabaseUrl
+        GEMINI_API_KEY: !Ref GeminiApiKey
+        MEDIA_BUCKET: !Ref MediaBucket
+
+Parameters:
+  DatabaseUrl:
+    Type: String
+    Description: PostgreSQL + PostGIS Connection String
+    Default: "postgresql+psycopg://jal_user:jal_password@localhost:5432/jal_dharani"
+  GeminiApiKey:
+    Type: String
+    Description: Google Gemini API Key
+    NoEcho: true
+    Default: "YOUR_GEMINI_API_KEY_HERE"
+
+Resources:
+  # S3 Bucket for user environmental photos & before/after documentation
+  MediaBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: jal-dharani-media
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+              - '*'
+            AllowedMethods:
+              - GET
+              - PUT
+              - POST
+            AllowedOrigins:
+              - '*'
+
+  # Serverless FastAPI Application running on AWS Lambda
+  JalDharaniApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../backend
+      Handler: lambda_handler.handler
+      Policies:
+        - S3CrudPolicy:
+            BucketName: !Ref MediaBucket
+      Events:
+        ApiEvent:
+          Type: HttpApi
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+
+Outputs:
+  ApiEndpoint:
+    Description: "HTTP API Gateway endpoint URL"
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/"
+  MediaBucketName:
+    Description: "S3 Bucket for photo evidence"
+    Value: !Ref MediaBucket
