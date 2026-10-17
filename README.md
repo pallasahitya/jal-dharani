@@ -1,4 +1,4 @@
-# Jal-Dharani 🌊
+# Jal-Dharani 
 ### Community-Driven Heat & Water Resilience Platform for India
 
 **Jal-Dharani** is a full-stack, geospatial environmental resilience platform designed to help communities across India explore water resources, understand urban heat, report environmental concerns, and organize grassroots conservation activities.
@@ -9,7 +9,7 @@ By combining interactive mapping, geospatial data, AI-assisted environmental exp
 
 ---
 
-## 🌍 The Problem
+##  The Problem
 
 Communities face interconnected environmental challenges:
 
@@ -21,7 +21,7 @@ Communities face interconnected environmental challenges:
 
 Jal-Dharani brings these concerns into one platform where people can explore environmental information, submit observations, discover community initiatives, and participate in local resilience efforts.
 
-## 🎯 Our Mission
+##  Our Mission
 
 Make environmental information accessible and empower communities to take informed, coordinated action toward water conservation and heat resilience.
 
@@ -31,53 +31,53 @@ Awareness → Discovery → Connection → Organization → Action → Documenta
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 🗺️ Interactive Environmental Map
+###  Interactive Environmental Map
 - Explore water bodies, aquifers, heat zones, and environmental reports.
 - Display geospatial information through an interactive Leaflet map.
 - Support spatial data and GeoJSON-based map layers.
 
-### 💧 Water Resource Exploration
+###  Water Resource Exploration
 - Explore information about water bodies and groundwater resources.
 - Review aquifer information and groundwater stress classifications.
 - Support spatial queries for nearby water resources.
 
-### 🌡️ Urban Heat Awareness
+###  Urban Heat Awareness
 - Explore urban heat vulnerability information.
 - Understand connections between heat, water demand, and evaporation.
 - Discover community-level cooling and resilience interventions.
 
-### 📍 Citizen Environmental Reporting
+###  Citizen Environmental Reporting
 - Submit observations about environmental concerns.
 - Associate reports with geographic locations.
 - Store report records through the backend API.
 - Support environmental explanations and safety guidance through AI integration.
 
-### 👥 Community Engagement
+###  Community Engagement
 - Discover community groups and conservation initiatives.
 - Create or join community collectives.
 - Share community updates and announcements.
 
-### 🌱 Conservation Activities
+###  Conservation Activities
 - Organize activities such as cleanups, desilting, and rainwater-harvesting audits.
 - Participate in activities and coordinate volunteers.
 - Support documentation of conservation outcomes.
 
-### 🤖 AI-Assisted Environmental Insights
+###  AI-Assisted Environmental Insights
 - Integrate Google Gemini for environmental report explanations.
 - Explain possible environmental processes behind observations.
 - Generate practical safety guidance and heat-water analysis.
 - Support deterministic fallback responses when AI functionality is unavailable.
 
-### 🔐 Authentication and Access Control
+###  Authentication and Access Control
 - JWT-based authentication in the backend.
 - Password hashing and protected API endpoints.
 - Authenticated operations for reports, communities, and activities.
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Layer | Technologies |
 |---|---|
@@ -96,7 +96,7 @@ Awareness → Discovery → Connection → Organization → Action → Documenta
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 The following diagram illustrates the main application components and their intended interactions.
 
@@ -143,7 +143,7 @@ flowchart TB
 
 ---
 
-## 🔄 Environmental Reporting Workflow
+##  Environmental Reporting Workflow
 
 ```mermaid
 flowchart TD
@@ -169,7 +169,7 @@ This workflow illustrates the intended reporting journey. Individual operations 
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 jal-dharani/
@@ -211,7 +211,7 @@ jal-dharani/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -315,7 +315,7 @@ LocalStack is an emulator. Creating a bucket in LocalStack does not create a buc
 
 ---
 
-## 🔌 Backend API Overview
+##  Backend API Overview
 
 The backend includes routers for authentication, reports, communities, activities, water bodies, aquifers, heat zones, and AI functionality.
 
@@ -336,7 +336,7 @@ For the full list of routes, open `http://127.0.0.1:8000/docs` while the backend
 
 ---
 
-## 🤖 AI Integration
+##  AI Integration
 
 Jal-Dharani integrates with the Google Gemini API to support environmental explanations and heat-water analysis.
 
@@ -353,7 +353,7 @@ Configure the Gemini API key using the environment variable expected by the back
 
 ---
 
-## ☁️ AWS SAM and Serverless Architecture
+##  AWS SAM and Serverless Architecture
 
 The repository contains an AWS SAM template at:
 
@@ -448,7 +448,7 @@ These commands run the existing test suite and production build. Their success s
 
 ---
 
-## 🔐 Security Practices
+##  Security Practices
 
 - Never commit API keys, passwords, access tokens, or private keys.
 - Keep actual credentials in local environment files or a suitable secrets manager.
@@ -461,7 +461,7 @@ These commands run the existing test suite and production build. Their success s
 
 ---
 
-## 🌱 Community Impact Cycle
+##  Community Impact Cycle
 
 Jal-Dharani is built around the idea that accessible environmental information can help communities coordinate practical action.
 
@@ -483,7 +483,7 @@ The cycle connects environmental awareness with community participation, conserv
 
 ---
 
-## 📚 Environmental Context
+##  Environmental Context
 
 The platform's subject areas align with environmental information commonly published by Indian institutions, including:
 
@@ -496,7 +496,7 @@ These organizations are relevant reference sources for water quality, groundwate
 
 ---
 
-## 🛣️ Future Improvements
+##  Future Improvements
 
 Potential future directions include:
 
@@ -511,7 +511,7 @@ These are possible improvements, not claims that all of them are currently imple
 
 ---
 
-## 👩‍💻 Repository
+##  Repository
 
 **GitHub:** [pallasahitya/jal-dharani](https://github.com/pallasahitya/jal-dharani)
 
